@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safai Karmi Service</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS START -->
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      scroll-behavior:smooth;
+    }
+    header{
+      background:linear-gradient(90deg, blue, red, green);
+      color:#fff;
+      padding:12px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+    }
+    .logo{font-size:20px;font-weight:bold;}
+    nav a{
+      color:#fff;
+      margin:0 10px;
+      text-decoration:none;
+    }
+    .menu{display:none;font-size:22px;cursor:pointer;}
+
+    .hero{
+      background:blue;
+      color:white;
+      padding:80px 20px;
+      text-align:center;
+      animation:fade 1.5s;
+    }
+    .btn{
+      background:red;
+      color:white;
+      padding:12px 22px;
+      text-decoration:none;
+      display:inline-block;
+      margin-top:20px;
+      transition:0.3s;
+      border-radius:5px;
+    }
+    .btn:hover{background:green;transform:scale(1.05);}
+
+    .section{
+      padding:40px 20px;
+      animation:fade 1s;
+    }
+    h2{text-align:center;color:green;}
+
+    ul li{margin:8px 0;}
+
+    .gallery{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .img{
+      flex:1 1 30%;
+      background:#ddd;
+      padding:40px;
+      text-align:center;
+    }
+
+    input, textarea, button{
+      width:100%;
+      padding:10px;
+      margin:6px 0;
+    }
+    button{
+      background:green;
+      color:white;
+      border:none;
+      cursor:pointer;
+    }
+
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:green;
+      color:white;
+      padding:15px;
+      border-radius:50%;
+      font-size:26px;
+    }
+
+    footer{
+      background:#222;
+      color:white;
+      text-align:center;
+      padding:10px;
+    }
+
+    @keyframes fade{
+      from{opacity:0;transform:translateY(20px);} 
+      to{opacity:1;transform:translateY(0);} 
+    }
+
+    @media(max-width:768px){
+      nav{display:none;flex-direction:column;background:#000;}
+      nav.show{display:flex;}
+      .menu{display:block;}
+    }
+  </style>
+  <!-- CSS END -->
+</head>
+<body>
+
+<header>
+  <div class="logo">Safai Karmi Service</div>
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="#login">Login</a>
+  </nav>
+  <div class="menu" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+</header>
+
+<section id="home" class="hero">
+  <h1>Safai Karmi Service</h1>
+  <p>Swachhta hi Seva hai</p>
+  <a href="tel:9999999999" class="btn">Call Now</a>
+</section>
+
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>Hum anubhavi Safai Karmi hain jo ghar, office, nali aur gaon ki safai imandari aur mehnat se karte hain.</p>
+</section>
+
+<section id="services" class="section">
+  <h2>Our Services</h2>
+  <ul>
+    <li>Ghar Safai</li>
+    <li>Office Safai</li>
+    <li>Nali Safai</li>
+    <li>Toilet & Bathroom Cleaning</li>
+    <li>Gaon & Road Safai</li>
+  </ul>
+</section>
+
+<section id="gallery" class="section">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <div class="img">Image 1</div>
+    <div class="img">Image 2</div>
+    <div class="img">Image 3</div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <p><b>Name:</b> Chhotku Lal</p>
+  <p><b>Address:</b> Village Panduwa, Post Bara, Prayagraj (UP)</p>
+
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="text" id="phone" placeholder="Phone Number">
+  <textarea id="msg" placeholder="Message"></textarea>
+  <button onclick="sendMsg()">Send</button>
+</section>
+
+<section id="login" class="section">
+  <h2>Login</h2>
+  <input type="text" id="user" placeholder="Username">
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="login()">Login</button>
+</section>
+
+<a class="whatsapp" href="https://wa.me/919999999999" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+  © 2026 Safai Karmi Service | Prayagraj
+</footer>
+
+<!-- JAVASCRIPT START -->
+<script>
+  function toggleMenu(){
+    document.getElementById('nav').classList.toggle('show');
+  }
+
+  function sendMsg(){
+    if(name.value==='' || phone.value===''){
+      alert('Sab field bharo');
+    }else{
+      alert('Message sent successfully');
+    }
+  }
+
+  function login(){
+    if(user.value==='admin' && pass.value==='1234'){
+      alert('Login Successful');
+    }else{
+      alert('Wrong Username or Password');
+    }
+  }
+</script>
+<!-- JAVASCRIPT END -->
+
+</body>
+</html>
